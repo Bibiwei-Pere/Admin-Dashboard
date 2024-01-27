@@ -1,0 +1,62 @@
+@import "../../styles/responsive.scss";
+@import "../../styles/variables.scss";
+
+.chartBox {
+  display: flex;
+  height: 100%;
+
+  @include sm{
+    flex-direction: column;
+  }
+
+  .boxInfo {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+	gap: 10px;
+	h1{
+		font-size: 24px;
+	}
+
+    @include sm{
+      gap: 20px;
+    }
+
+    .title {
+      display: flex;
+      align-items: center;
+      gap: 80px;
+	  .icon{
+		border: 1px solid $gray-200;
+		padding: 4px;
+		border-radius: 50%;
+	  }
+	  .chart {
+      		height: 50px;
+			width: 100%;
+    }
+      @include xxl{
+        font-size: 14px;
+      }
+    }
+
+    h1{
+      @include xxl{
+        font-size: 20px;
+      }
+    }
+	.container{
+		display: flex;
+		align-items: center;
+		gap: 10px;
+
+		span{
+			padding: 4px 10px;
+			border-radius: 20px;
+			display: flex;
+			gap: 5px;
+		}
+	}
+  }
+}

@@ -1,0 +1,142 @@
+@import "../../styles/variables.scss";
+@import "../../styles/responsive.scss";
+
+.menu {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 40px;
+	position: relative;
+	margin-top: 10px;
+	height: 1000px;
+
+	.logo{
+		margin-bottom: 10px;
+	}
+
+    .item {
+    	display: flex;
+    	flex-direction: column;
+		padding: 0 8px;
+    	gap: 5px;
+    .listItem {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 0 10px;
+      border-radius: 5px 0 0 5px;
+
+      &:hover {
+			color: $white;
+			img{
+			filter: invert(200%) sepia(100%) saturate(100%) hue-rotate(100deg) brightness(-1000%) contrast(150%);
+			}
+		.listItemTitle{
+			position: absolute;
+			background-color: $dark;
+			padding: 5px 20px;
+			border-radius: 5px;
+			color: $green;
+			font-weight: bold;
+			display: block;
+			left: 80px;
+			text-transform: uppercase;
+			z-index: 10;
+		}
+      }
+
+      .listItemTitle{
+		display: none;
+        @include lg{
+          display: none;
+        }
+      }
+    }
+  }
+  .item.active{
+		.listItem{
+		.bar{
+			height: 20px;
+			width: 4px;
+			background-color: $dark;
+			position: absolute;
+			right: -15px;
+			border-radius: 5px 0 0 5px;
+		}
+			&:hover {
+			filter: none;
+	}
+			filter: invert(200%) sepia(100%) saturate(100%) hue-rotate(100deg) brightness(-1000%) contrast(150%);
+      }
+    }
+
+  .theme_switch{
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	background-color: $white;
+	padding: 8px 8px;
+	border-radius: 30px;
+	margin-top: 10px;
+
+		.light{
+			filter: invert(1000%) sepia(500%) saturate(400%) hue-rotate(120deg) brightness(160%) contrast(100%);
+		}
+	img{
+		cursor: pointer;
+		&:hover{
+			filter: invert(1000%) sepia(500%) saturate(400%) hue-rotate(120deg) brightness(160%) contrast(100%);
+		}
+
+	}
+  }
+  .theme_switch.active{
+		.light{
+			filter: none;
+		}
+		.dark{
+			filter: invert(200%) sepia(100%) saturate(100%) hue-rotate(100deg) brightness(-1000%) contrast(150%);
+		}
+  }
+
+  .menu_footer{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	position: absolute;
+	bottom: 20px;
+	gap: 20px;
+  }
+}
+
+.dark{
+	.item .listItem{
+		&:hover{
+			img{
+			filter: invert(200%) sepia(100%) saturate(100%) hue-rotate(100deg) brightness(1000%) contrast(150%);;
+		}
+	}
+	}
+  .item.active{
+		.listItem{
+		.bar{
+			background-color: $green;
+			position: absolute;
+			right: -13px;
+			border-radius: 5px 0 0 5px;
+		}
+			&:hover {
+			filter: none;
+	}
+			filter: invert(200%) sepia(100%) saturate(100%) hue-rotate(100deg) brightness(1000%) contrast(150%);
+      }
+    }
+	.theme_switch{
+		background-color: $black;
+	}
+	  .theme_switch.active{
+		.dark{
+			filter: none;
+		}
+  }
+}

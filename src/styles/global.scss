@@ -1,0 +1,151 @@
+@import "./variables.scss";
+@import "./responsive.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Plus Jakarta Sans", sans-serif !important;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1{
+	font-size: 20px;
+	@include md{
+		font-size: 18px;
+	}
+}
+
+h2{
+	font-size: 18px;
+	font-weight: normal;
+	color: $gray-400;
+		@include md{
+		font-size: 16px;
+	}
+}
+
+h3{
+	font-size: 18px;
+	font-weight: 600;
+		@include md{
+		font-size: 16px;
+	}
+}
+
+h4{
+	font-size: 16px;
+	font-weight: 500;
+		@include md{
+		font-size: 14px;
+	}
+}
+
+h5{
+	font-size: 14px;
+}
+
+h6{
+	font-size: 16px;
+	font-weight: 500;
+		@include md{
+		font-size: 14px;
+	}	
+}
+
+p{
+	font-size: 14px;
+	color: $gray-400;
+		@include md{
+		font-size: 13px;
+	}
+}
+
+::-webkit-scrollbar {
+  width: 4px !important;
+  height: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: $gray-200;
+  border-radius: 20px;
+}
+
+.main {
+  max-width: 1517px;
+  margin: auto;
+}
+
+.menuContainer {
+  width: max-content;
+  padding: 20px 0px;
+}
+
+.container {
+  display: flex;
+}
+
+.contentContainer {
+  padding: 5px 0;
+  width: 100%;
+}
+
+.light{
+.main {
+  background-color: $gray-50;
+  color: $dark;
+}
+
+.menuContainer {
+  background-color: $gray-100;
+  border-right: 1px solid $gray-200;
+}
+}
+
+.dark{
+	h2, p{
+		color: $gray-200;
+	}
+.main {
+  background-color: $black;
+  color: $white;
+  .home .box{
+		background-color: $gray-800;
+		border: 1px solid $gray-800;
+		.bigChartBox{
+			select {
+				color: $white;
+				option{
+					background-color: $dark;
+				}
+			}
+		}
+		.dataTable .dataGrid{
+			color: $white;
+		}
+  }
+  .navbar{
+	border-bottom: 1px solid $black;
+	.date img, .notification img, .down{
+			filter: invert(200%) sepia(100%) saturate(100%) hue-rotate(100deg) brightness(1000%) contrast(150%);
+
+	}
+	.dropdown{
+		box-shadow: 2px 2px 20px 0px $white;
+		color: $dark;
+	}
+  }
+  input{
+	color: $white;
+  }
+}
+
+.menuContainer {
+  background-color: $gray-800;
+  border-right: 1px solid $black;
+}
+}

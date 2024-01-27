@@ -1,0 +1,103 @@
+@import "../../styles/responsive.scss";
+@import "../../styles/variables.scss";
+
+.navbar {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid $gray-200;
+
+  .container {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+	.search{
+		position: relative;
+		display: flex;
+		align-items: center;
+		input{
+			width: 300px;
+			padding: 10px 14px;
+  			border: 1px solid $gray-200;
+			border-radius: 20px;
+			background-color: transparent;
+			outline: none;
+			@include lg{
+				display: none;
+			}
+			&:hover{
+				border: 1px solid $green;
+			}
+		}
+		.search_icon{
+			position: absolute;
+			left: 15px;
+			display: none;
+		}
+	}
+	.date{
+		display: flex;
+		gap: 10px;
+		@include md{
+			display: none;
+		}
+		img{
+			width: 20px;
+			height: 20px;
+		}
+	}
+	.icons{
+		display: flex;
+		align-items: center;
+		gap: 20px;
+		.notification {
+			width: 37px;
+			height: 37px;
+		}
+		.user{
+			display: flex;
+			align-items: center;
+			gap: 14px;
+			border: 1px solid $gray-200;
+			border-radius: 30px;
+			padding: 4px 8px;
+			text-align: right;
+			@include md{
+				.box{
+					display: none;
+				}
+			}
+			.down{
+				cursor: pointer;
+			}
+			.down.active{
+				cursor: pointer;
+				transform: rotate(180deg);
+			}
+		}
+	}
+	.dropdown{
+		position: absolute;
+		top: 90px;
+		right: 15px;
+		padding: 10px 20px 20px;
+		border-radius: 10px;
+		box-shadow: 2px 2px 15px -5px $dark;
+		z-index: 10;
+		background-color: $white;
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+		span .close{
+			cursor: pointer;
+			float: inline-end;
+			font-size: 18px;
+			height: 20px;
+			border-radius: 50%;
+		}
+
+	}
+  }
+}

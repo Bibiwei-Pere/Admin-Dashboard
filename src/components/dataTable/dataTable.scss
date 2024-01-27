@@ -1,0 +1,41 @@
+@import "../../styles/variables.scss";
+
+.dataTable{
+  .dataGrid{
+	border: none;
+	color: $black;
+	
+    .MuiDataGrid-toolbarContainer{
+      flex-direction: row-reverse;
+    }
+	.MuiDataGrid-columnHeaders{
+		color: $gray-300;
+		font-weight: 100;
+		font-size: 16px;
+	  }
+	.MuiDataGrid-row{
+		border: none !important;
+		// border-top: 1px solid $gray-50;
+	  }
+	  
+	.MuiDataGrid-main{
+		border: none !important;
+		// border-top: 1px solid $gray-50;
+	  }		
+	  .MuiDataGrid{
+		border: none !important;
+		// border-top: 1px solid $gray-50;
+	  }
+	  .MuiDataGrid-footerContainer{
+		margin-top: 60px;
+		border: none;
+	  }
+
+    img{
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+  }
+}

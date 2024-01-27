@@ -1,0 +1,14 @@
+@import "../../styles/variables.scss";
+
+.users{
+	.wrapper{
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 0px;
+		h4{
+			cursor: pointer;
+			color: $green;
+			font-weight: normal;
+		}
+	}
+}
