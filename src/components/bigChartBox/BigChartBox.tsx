@@ -5,7 +5,6 @@ import Dropdown from "../../images/navbar/Dropdown.png";
 import { SetStateAction, useState } from "react";
 import { useThemeContext } from "../../context/ThemeContext";
 import { bigChartData } from "../../data";
-import { ResponsiveContainer } from "recharts";
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 

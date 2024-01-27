@@ -20,8 +20,10 @@
     grid-template-columns: repeat(2, 1fr);
   }
   @include sm {
-    grid-template-columns: 1fr;
-    // grid-auto-rows: minmax(120px, auto);
+	padding: 15px 12px;
+	gap: 15px;
+    grid-template-columns: 100%;
+	height: fit-content;
   }
 
   .box {
@@ -29,6 +31,9 @@
     border-radius: 10px;
     border: 1px solid $gray-200;
 	background-color: $white;
+	@include sm{
+		height: fit-content;
+	}
   }
 
   .box1 {
@@ -40,24 +45,15 @@
 	@include md{
 		grid-column: span 2;
 	}	
+	@include sm{
+		display: none;;
+	}	
   }
 
   .box2, .box3, .box4, .box5 {
     grid-column: span 1;
     grid-row: span 1;
   }
-
-  .box4{
-		@include xxl{
-		// grid-column: 5;
-	}
-  }
-  .box5{
-		@include xxl{
-		// grid-column: 6;
-	}
-  }
-
   .box6 {
     grid-column: span 3;
     grid-row: span 2;
@@ -67,6 +63,9 @@
 	@include lg{
 		grid-column: span 2;
 	}
+	@include sm{
+		grid-column: span 1;
+	}
   }
   .box7 {
     grid-column: span 2;
@@ -74,15 +73,15 @@
 
     @include xl {
 		grid-column: span 2;
-    	grid-row: span 2;
     }    
 	@include lg {
 		grid-column: span 1;
-    	grid-row: span 2;
     }	
 	@include md {
 		grid-column: span 2;
-    	grid-row: span 2;
+    }	
+	@include sm {
+		grid-column: span 1;
     }
   }
 }

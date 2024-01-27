@@ -4,12 +4,15 @@ import Calender from "../../images/navbar/Calender.png";
 import Notification from "../../images/navbar/Notification.png";
 import User from "../../images/navbar/User.png";
 import Dropdown from "../../images/navbar/Dropdown.png";
+import Hamburger from "../../images/navbar/icon-hamburger.svg";
 import Close from "../../images/navbar/icon-close.svg";
 import { SetStateAction, useState } from "react";
+import Menu from "../menu/Menu";
 
 const Navbar = () => {
 	const [inputValue, setInputValue] = useState("");
 	const [dropdown, setDropdown] = useState(false);
+	const [hamburger, setHamburger] = useState(false);
 
 	const handleInputChange = (e: { target: { value: SetStateAction<string> } }) => {
 		setInputValue(e.target.value);
@@ -19,6 +22,11 @@ const Navbar = () => {
 		month: "long",
 		day: "numeric",
 	});
+
+	const handleClose = () => {
+		setHamburger(false);
+	};
+
 	return (
 		<div className="navbar">
 			<h2>Dashboard</h2>
@@ -45,6 +53,17 @@ const Navbar = () => {
 							<img src={Dropdown} alt="Dropdown" />
 						</div>
 					</div>
+					<div className="hamburger" onClick={() => setHamburger(true)}>
+						<img src={Hamburger} alt="Hamburger" />
+					</div>
+					{hamburger && (
+						<div>
+							<div onClick={handleClose} className="close">
+								<img src={Close} alt="Close" />
+							</div>
+							<Menu />
+						</div>
+					)}
 					{dropdown ? (
 						<div className="dropdown">
 							<span>

@@ -9,10 +9,22 @@
   justify-content: space-between;
   border-bottom: 1px solid $gray-200;
 
+  @include sm{
+	h2{
+		display: none;
+	}
+	flex-direction: row-reverse;
+	padding: 15px 12px;
+  }
   .container {
     display: flex;
     align-items: center;
     gap: 35px;
+
+	@include sm{
+		gap: 0;
+		width: 100%;
+	}
 	.search{
 		position: relative;
 		display: flex;
@@ -52,9 +64,44 @@
 		display: flex;
 		align-items: center;
 		gap: 20px;
+
+		@include sm{
+			gap: 0;
+			flex-direction: row-reverse;
+		}
+		.hamburger{
+			position: absolute;
+			right: 12px;
+			top: 35px;
+			cursor: pointer;
+			display: none;
+			@include sm{
+				display: block;
+			}
+		}
+		.close{
+			z-index: 12;
+			position: absolute;
+			right: 12px;
+			top: 30px;
+			cursor: pointer;
+			background-color: $white;
+		}
+		.menu{
+			@include sm{
+				padding-top: 100px;
+				right: 0;
+				.logo{
+					display: none;
+				}
+			}
+		}
 		.notification {
 			width: 37px;
 			height: 37px;
+			@include sm{
+				margin-left: 14px;
+			}
 		}
 		.user{
 			display: flex;

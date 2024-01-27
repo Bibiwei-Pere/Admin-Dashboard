@@ -9,6 +9,20 @@
 	position: relative;
 	margin-top: 10px;
 	height: 1000px;
+	@include sm{
+		position: fixed;
+		background-color: $gray-50;
+		top: 0;
+		margin-top: 0;
+		z-index: 11;
+		width: max-content;
+		gap: 15px;
+		padding: 30px 1px;
+		min-height: 100vh;
+		right: -100%;
+		overflow-x: hidden;
+		width: 200px;
+	}
 
 	.logo{
 		margin-bottom: 10px;
@@ -19,12 +33,21 @@
     	flex-direction: column;
 		padding: 0 8px;
     	gap: 5px;
+		@include sm{
+			width: 100%;
+			gap: 2px;
+		}
+		
     .listItem {
       display: flex;
       align-items: center;
       gap: 10px;
       padding: 0 10px;
       border-radius: 5px 0 0 5px;
+	  @include sm{
+		padding: 0;
+		gap: 3px;
+	  }
 
       &:hover {
 			color: $white;
@@ -38,30 +61,45 @@
 			border-radius: 5px;
 			color: $green;
 			font-weight: bold;
-			display: block;
 			left: 80px;
 			text-transform: uppercase;
 			z-index: 10;
+			@include sm{
+				position: relative;
+				padding: 0;
+				text-transform: capitalize;
+				left: 0;
+				background-color: transparent;
+				color: $dark;
+			}
 		}
       }
 
       .listItemTitle{
 		display: none;
-        @include lg{
-          display: none;
+        @include sm{
+          display: block;
         }
       }
     }
   }
   .item.active{
 		.listItem{
+			.listItemTitle{
+				@include sm{
+					font-weight: bold;
+				}
+			}
 		.bar{
 			height: 20px;
 			width: 4px;
 			background-color: $dark;
 			position: absolute;
-			right: -15px;
+			right: -14px;
 			border-radius: 5px 0 0 5px;
+			@include sm{
+				display: none;
+			}
 		}
 			&:hover {
 			filter: none;
@@ -78,7 +116,17 @@
 	padding: 8px 8px;
 	border-radius: 30px;
 	margin-top: 10px;
-
+	@include sm{
+		position: absolute;
+		flex-direction: row;
+		margin-top: 0px;
+		padding: 3px 5px;
+		top: 23px;
+		left: 15px;
+		img{
+			width: 25px;
+		}
+	}
 		.light{
 			filter: invert(1000%) sepia(500%) saturate(400%) hue-rotate(120deg) brightness(160%) contrast(100%);
 		}
@@ -106,6 +154,13 @@
 	position: absolute;
 	bottom: 20px;
 	gap: 20px;
+	@include sm{
+		position: relative;
+		padding: 0;
+		margin-top: 15px;
+		gap: 10px;
+		width: 200px;
+	}
   }
 }
 
