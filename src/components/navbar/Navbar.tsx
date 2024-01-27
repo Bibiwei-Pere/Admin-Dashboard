@@ -67,7 +67,7 @@ const Navbar = () => {
 					{dropdown ? (
 						<div className="dropdown">
 							<span>
-								<h5 className="close" onClick={() => setDropdown(false)}>
+								<h5 className="cloe" onClick={() => setDropdown(false)}>
 									{/* <img src={Close} alt="Close" /> */}x
 								</h5>
 							</span>

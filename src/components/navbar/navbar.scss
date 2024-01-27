@@ -128,7 +128,6 @@
 	.dropdown{
 		position: absolute;
 		top: 90px;
-		right: 15px;
 		padding: 10px 20px 20px;
 		border-radius: 10px;
 		box-shadow: 2px 2px 15px -5px $dark;
@@ -137,7 +136,12 @@
 		display: flex;
 		flex-direction: column;
 		gap: 10px;
-		span .close{
+		margin-left: 60px;
+		@include sm{
+			left: 12px;
+			margin-left: 0;
+		}
+		span .cloe{
 			cursor: pointer;
 			float: inline-end;
 			font-size: 18px;
