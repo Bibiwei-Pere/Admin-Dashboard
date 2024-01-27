@@ -145,6 +145,21 @@ p{
   input{
 	color: $white;
   }
+  .contentContainer{
+	.hamburger, .close{
+			filter: invert(200%) sepia(100%) saturate(100%) hue-rotate(100deg) brightness(1000%) contrast(150%);
+	}
+  }
+  .menu{
+	@include sm{
+		background-color: $gray-800;
+	}
+	.item .listItem .listItemTitle{
+			@include sm{
+			color: $white;
+			}
+		}
+	}
 }
 
 .menuContainer {
