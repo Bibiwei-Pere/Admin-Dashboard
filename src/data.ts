@@ -368,7 +368,7 @@ export const userRows = [
   },
   {
 	id: 4,
-    img: Jayden,
+    img: Cooper,
 	icon: Download,
     name: "Cooper Press",
     date: "Nov 14, 2023",

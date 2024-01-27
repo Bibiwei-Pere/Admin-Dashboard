@@ -43,7 +43,7 @@ const BigChartBox = () => {
 	};
 
 	const options = {
-		indexAxis: "x",
+		indexAxis: "x" as const, // Specify the type of indexAxis
 		elements: {
 			bar: {
 				borderWidth: 0,
@@ -54,7 +54,7 @@ const BigChartBox = () => {
 		plugins: {
 			tooltip: {
 				displayColors: false,
-				yAlign: "bottom",
+				yAlign: "bottom" as const,
 				backgroundColor: theme === "light" ? "#000" : "#fff",
 				bodyColor: theme === "light" ? "#fff" : "#000",
 				titleFont: {
@@ -92,34 +92,11 @@ const BigChartBox = () => {
 				},
 			},
 			y: {
-				type: "linear",
+				// type: "linear",
 				ticks: {
 					stepSize: 8,
 					precision: 1,
 					color: theme === "light" ? "#525252" : "#E5E5E5",
-					callback: function (value: number) {
-						if (value === 0) {
-							return value;
-						} else if (value === 8) {
-							return "5.0000";
-						} else if (value === 16) {
-							return "10.0000";
-						} else if (value === 24) {
-							return "20.0000";
-						} else if (value === 32) {
-							return "30.0000";
-						} else if (value === 40) {
-							return "40.0000";
-						} else if (value === 48) {
-							return "50.0000";
-						} else if (value === 56) {
-							return "60.0000";
-						} else if (value === 64) {
-							return "70.0000";
-						} else {
-							return value.toFixed(4);
-						}
-					},
 				},
 				border: {
 					display: false,
@@ -135,6 +112,7 @@ const BigChartBox = () => {
 			},
 		},
 	};
+
 	return (
 		<div className="bigChartBox">
 			<div className="wrapper">

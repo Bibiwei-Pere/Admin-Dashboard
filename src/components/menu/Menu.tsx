@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import "./Menu.scss";
+import "./menu.scss";
 import { menu, menuFooter } from "../../data";
 import Logo from "../../images/sidebar/Vector.svg";
 import Light from "../../images/sidebar/Lightmode.svg";

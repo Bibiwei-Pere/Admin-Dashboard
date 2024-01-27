@@ -83,6 +83,9 @@ p{
 .menuContainer {
   width: max-content;
   padding: 20px 0px;
+  @include sm{
+  display: none
+	}
 }
 
 .container {
