@@ -4,7 +4,6 @@ import Calender from "../../images/navbar/Calender.png";
 import Notification from "../../images/navbar/Notification.png";
 import User from "../../images/navbar/User.png";
 import Dropdown from "../../images/navbar/Dropdown.png";
-import Close from "../../images/navbar/icon-close.svg";
 import { SetStateAction, useState } from "react";
 
 const Navbar = () => {
